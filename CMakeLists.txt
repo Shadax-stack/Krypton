@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 2.8)
 
 project(Krypton)
 
-file(GLOB Krypton_SRC "Krypton/*.h" "Krypton/*.cpp")
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_library(Krypton_STATIC STATIC Kyrpton_SRC)
-add_library(Krypton_STATIC SHARED Kyrpton_SRC)
+add_subdirectory(src)
+
+option(KRYPTON_BUILD_EXAMPLES "Build the examples associated with the library" OFF)
+if(KRYPTON_BUILD_EXAMPLES)
+	add_subdirectory(examples)
+endif()
