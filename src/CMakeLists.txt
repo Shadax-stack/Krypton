@@ -5,7 +5,7 @@ file(GLOB Krypton_SRC "Krypton.h" "Krypton/*.h" "Krypton/*.cpp")
 add_library(Krypton_STATIC STATIC ${Krypton_SRC})
 add_library(Krypton_SHARED SHARED ${Krypton_SRC})
 
-target_compile_definitions(Krypton_STATIC PUBLIC -DKRYPTON_EXPORT= -DKRYPTON_IMPORT=)
+target_compile_definitions(Krypton_STATIC PUBLIC "-DKRYPTON_EXPORT" "-DKRYPTON_IMPORT")
 
 cmake_policy(SET CMP0054 NEW)
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
