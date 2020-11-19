@@ -16,7 +16,7 @@ namespace Krypton {
 			SIMD_128 SSE_Register;
 			struct {
 				float r;
-				float b;
+				float g;
 			};
 			struct {
 				float x;
@@ -25,6 +25,46 @@ namespace Krypton {
 			float data[2];
 		};
 		Vector2f(void);
+	};
+
+	struct KRYPTON_API Vector3f {
+	public:
+		union {
+			SIMD_128 SSE_Register;
+			struct {
+				float r;
+				float g;
+				float b;
+			};
+			struct {
+				float x;
+				float y;
+				float z;
+			};
+			float data[3];
+		};
+		Vector3f(void);
+	};
+
+	struct KRYPTON_API Vector4f {
+	public:
+		union {
+			SIMD_128 SSE_Register;
+			struct {
+				float r;
+				float g;
+				float b;
+				float a;
+			};
+			struct {
+				float x;
+				float y;
+				float z;
+				float w;
+			};
+			float data[4];
+		};
+		Vector4f(void);
 	};
 
 }

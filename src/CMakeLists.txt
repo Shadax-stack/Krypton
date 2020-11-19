@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-file(GLOB Krypton_SRC "Krypton/*.h" "Krypton/*.cpp")
+file(GLOB Krypton_SRC "Krypton.h" "Krypton/*.h" "Krypton/*.cpp")
 
 add_library(Krypton_STATIC STATIC ${Krypton_SRC})
 add_library(Krypton_SHARED SHARED ${Krypton_SRC})
