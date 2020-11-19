@@ -9,13 +9,13 @@ target_compile_definitions(Krypton_STATIC PUBLIC "-DKRYPTON_EXPORT" "-DKRYPTON_I
 
 cmake_policy(SET CMP0054 NEW)
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-  target_compile_definitions(Krypton_SHARED PUBLIC "-DKRYPTON_EXPORT=__attribute__((visibility(default))" PUBLIC "-DKRYPTON_IMPORT")
+  target_compile_definitions(Krypton_SHARED PUBLIC "-DKRYPTON_EXPORT=__attribute__((visibility(default))" INTERFACE "-DKRYPTON_IMPORT")
  elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-  target_compile_definitions(Krypton_SHARED PUBLIC "-DKRYPTON_EXPORT=__attribute__((visibility(default))" PUBLIC "-DKRYPTON_IMPORT")
+  target_compile_definitions(Krypton_SHARED PUBLIC "-DKRYPTON_EXPORT=__attribute__((visibility(default))" INTERFACE "-DKRYPTON_IMPORT")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
-  target_compile_definitions(Krypton_SHARED PUBLIC "-DKRYPTON_EXPORT=_declspec(dllexport)" PUBLIC "-DKRYPTON_IMPORT=_declspec(dllimport)")
+  target_compile_definitions(Krypton_SHARED PUBLIC "-DKRYPTON_EXPORT=_declspec(dllexport)" INTERFACE "-DKRYPTON_IMPORT=_declspec(dllimport)")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
-  target_compile_definitions(Krypton_SHARED PUBLIC "-DKRYPTON_EXPORT=_declspec(dllexport)" PUBLIC "-DKRYPTON_IMPORT=_declspec(dllimport)")
+  target_compile_definitions(Krypton_SHARED PUBLIC "-DKRYPTON_EXPORT=_declspec(dllexport)" INTERFACE "-DKRYPTON_IMPORT=_declspec(dllimport)")
 endif()
 
 target_compile_definitions(Krypton_STATIC PRIVATE KRYPTON_BUILD=1)
