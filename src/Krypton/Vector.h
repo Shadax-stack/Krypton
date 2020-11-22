@@ -25,6 +25,7 @@ namespace Krypton {
 			float data[2];
 		};
 		Vector2f(void);
+		Vector2f(float x, float y);
 	};
 
 	struct KRYPTON_API Vector3f {
@@ -44,6 +45,7 @@ namespace Krypton {
 			float data[3];
 		};
 		Vector3f(void);
+		Vector3f(float x, float y, float z);
 	};
 
 	struct KRYPTON_API Vector4f {
@@ -65,6 +67,7 @@ namespace Krypton {
 			float data[4];
 		};
 		Vector4f(void);
+		Vector4f(float x, float y, float z, float w);
 	};
 
 }
