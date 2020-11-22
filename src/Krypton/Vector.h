@@ -10,7 +10,7 @@ namespace Krypton {
 
 	typedef __m128 SIMD_128;
 
-	struct KRYPTON_API Vector2f {
+	struct alignas(sizeof(SIMD_128)) KRYPTON_API Vector2f {
 	public:
 		union { 
 			SIMD_128 SSE_Register;
@@ -28,7 +28,7 @@ namespace Krypton {
 		Vector2f(float x, float y);
 	};
 
-	struct KRYPTON_API Vector3f {
+	struct alignas(sizeof(SIMD_128)) KRYPTON_API Vector3f {
 	public:
 		union {
 			SIMD_128 SSE_Register;
@@ -48,7 +48,7 @@ namespace Krypton {
 		Vector3f(float x, float y, float z);
 	};
 
-	struct KRYPTON_API Vector4f {
+	struct alignas(sizeof(SIMD_128)) KRYPTON_API Vector4f {
 	public:
 		union {
 			SIMD_128 SSE_Register;
